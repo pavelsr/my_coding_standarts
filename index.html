@@ -1,0 +1,17 @@
+---
+---
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Coding standarts</title>
+  </head>
+  <body>   
+		{% capture foo %}
+    {% include list_sections.html %}
+		{% endcapture %}
+		{% include toc.html html=foo id="toc" %}
+		{% include anchor_headings.html html=foo anchorBody="#" %}
+  </body>
+</html>
