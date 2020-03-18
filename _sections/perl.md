@@ -12,7 +12,9 @@
 
 [![stackoverflow perl tag top](https://img.shields.io/badge/stackoverflow-perl%20tag%20top-orange?style=for-the-badge&logo=stackoverflow)](https://stackoverflow.com/questions/tagged/perl?tab=Votes)
 
-github topic
+[![github.com/topics/perl](https://img.shields.io/badge/github-topic%3Aperl-black?style=for-the-badge&logo=github)](https://github.com/topics/perl)
+
+[![telegram ru perl chat](https://img.shields.io/badge/Modern%3A%3APerl-%F0%9F%87%B7%F0%9F%87%BA-blue?style=for-the-badge&logo=telegram)](https://t.me/modernperl)
 
 https://gh.metacpan.org/ - Люди Perl или проект "GitHub меееts CPAN"
 
