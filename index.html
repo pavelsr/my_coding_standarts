@@ -6,12 +6,19 @@
   <head>
     <meta charset="utf-8">
     <title>Coding standarts</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/light.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.2/styles/default.min.css">
   </head>
-  <body>   
+  <body>
 		{% capture foo %}
     {% include list_sections.html %}
 		{% endcapture %}
 		{% include toc.html html=foo id="toc" %}
 		{% include anchor_headings.html html=foo anchorBody="#" %}
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.2/highlight.min.js"></script>
+    <script>
+    hljs.initHighlightingOnLoad();
+    hljs.configure();
+    </script>
   </body>
 </html>

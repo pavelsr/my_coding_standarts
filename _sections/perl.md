@@ -42,7 +42,7 @@ http://perldoc.perl.org/index-faq.html
 
 Полный список pbp на русском [тут](https://docs.google.com/document/d/1ASXiq_c4-rDYd7_MrZR3X65CW7qqeq2kluJ5F3qABpI/edit?usp=sharing), [html версия тут](https://docs.google.com/document/d/e/2PACX-1vR3tdSGFKq86dvC5pcMEKGi0YTuyTPWVOc0NmGjsVRqiphE78ufN8V5yjVskjEjaxKawoNSpe_FQe6w/pub)
 
-Автоматизированно проверить свой код на соответствие рекомендациям PBP можно при помощи [perlcritic](https://metacpan.org/pod/perlcritic) 
+Автоматизированно проверить свой код на соответствие рекомендациям PBP можно при помощи [perlcritic](https://metacpan.org/pod/perlcritic)
 
 ### Хорошие обучающие ресурсы
 
@@ -148,7 +148,7 @@ my $substring = substr($string, 0, index($string, "."));
 
 #### Посмотреть что в `@INC`
 
-```
+```shell
 perl -le 'print for @INC'
 perl -e "print qq(@INC)"
 ```
@@ -162,16 +162,18 @@ print $_."\n" foreach (@INC);
 #### Распечатать все переменные окружения которые видит perl в алфавитном порядке
 
 ```perl
-foreach (sort keys %ENV) { 
-  print "$_  =  $ENV{$_}\n"; 
+foreach (sort keys %ENV) {
+  print "$_  =  $ENV{$_}\n";
 }
 ```
 
 #### Полезные переменные окружения
 
+```
 PERL5LIB
 PERL5OPT=-d
 PERLDB_OPTS='NonStop frame=1'
+```
 
 #### Использование стандартного дебаггера
 
@@ -371,9 +373,9 @@ https://metacpan.org/pod/App::CLI::Command
 
 ### Модули
 
-Don't Reinvent Wheel — Не переизобретайте колесо 
+Don't Reinvent Wheel — Не переизобретайте колесо
 
-Не переизобретайте колесо — если подобное колесо уже существует, просто адаптируйте его для своих нужд. Вероятно, для решения данной проблемы уже существует стандартный модуль в дистрибутиве Perl, или модуль из CPAN, или модуль, разработанный другими людьми внутри организации. 
+Не переизобретайте колесо — если подобное колесо уже существует, просто адаптируйте его для своих нужд. Вероятно, для решения данной проблемы уже существует стандартный модуль в дистрибутиве Perl, или модуль из CPAN, или модуль, разработанный другими людьми внутри организации.
 
 #### Рейтинги
 
@@ -381,7 +383,7 @@ Don't Reinvent Wheel — Не переизобретайте колесо
 
 http://ali.as/top100/index.html - проект CPAN TOP 100 от [Adam Kennedy](https://github.com/adamkennedy).
 
-Здесь есть четыре рейтинга 
+Здесь есть четыре рейтинга
 
 1) модули с наибольшим числом зависимостей (Heavy 100)
 
@@ -389,7 +391,7 @@ http://ali.as/top100/index.html - проект CPAN TOP 100 от [Adam Kennedy](
 
 3) самые "падающие" при установке модули по данным с cpantesters.org (Fail 100)
 
-4) (Meta 100) 
+4) (Meta 100)
 
 http://neilb.org/reviews/index.html - обзоры на модули со сходным функционалом
 
@@ -426,7 +428,7 @@ https://perldoc.perl.org/perlobj.html
 В случае локальных игр с докером (не на продакшене) можно делать так
 
 ```
-# perl 
+# perl
 * * * * * cd /app && perl -Ilib crawler.pl >>/proc/1/fd/1 2>&1
 #
 use Log::Any::Adapter ( 'Fille', file => '/proc/1/fd/1', log_level => 'debug' );
