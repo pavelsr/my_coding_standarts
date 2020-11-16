@@ -478,6 +478,62 @@ $dbh->tables('', '%', '');
 $dbh->selectcol_arrayref('SELECT node_id FROM Ru_Node ORDER BY node_id');
 ```
 
+### ORM
+
+#### Общие рекомендации (best practices)
+
+##### get_column
+
+Если нужны данные только из одной конкретной колонки - используйте [get_column](https://metacpan.org/pod/DBIx::Class::ResultSet#get_column);
+
+Пример:
+
+```perl
+my @curr_cities = map { $_->city_code } $resultset->search( {}, { select => 'city_code' } );
+```
+
+лучше заменить на
+
+```perl
+my @curr_cities = $resultset->get_column('city_code')->all;
+```
+
+##### populate
+
+2. Если нужно добавить данные - обратите внимание на метод-обёртку [populate](https://metacpan.org/pod/DBIx::Class::ResultSet#populate), возможно запись будет более лакончиной
+
+Пример:
+
+```perl
+for my $city_code (@to_insert) {
+    $resultset->create( { city_code => $city_code } );
+}
+```
+
+лучше заменить на
+
+```perl
+$resultset->populate([[qw(city_code)], map {[$_]} @to_insert);
+```
+
+##### -in при работе с массивами
+
+Если вам нужно удалить массив записей по значениям - упростите запись за счёт модификатора `-in`
+
+Пример:
+
+```
+for my $city_code (@to_delete) {
+    $resultset->search( { city_code => $city_code } )->delete_all;
+}
+```
+
+лучше заменить на
+
+```
+$resultset->search({city_code => {-in => \@to_delete}})->delete()
+```
+
 
 ### Mojolicious
 
