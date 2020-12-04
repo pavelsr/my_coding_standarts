@@ -36,6 +36,7 @@
 * [WireShark](https://www.wireshark.org/) [ppa](https://launchpad.net/~wireshark-dev/+archive/ubuntu/stable) - анализатор трафика
 * [Handbrake](https://handbrake.fr/) - видео конвертер
 * [KeePassXC](https://keepassxc.org/) - менеджер паролей. Еще есть плагины KeePassXC-browser
+* [VeraCrypt](https://ru.wikipedia.org/wiki/) - шифрование файлов
 * [DBeaver](https://dbeaver.io/) - для удобной работы с базами данных
 
 И конечно современные браузеры - Firefox, Opera, Яндекс.Браузер, Chrome, [Ungoogled Сhrominum](https://github.com/Eloston/ungoogled-chromium), Tor Browser
