@@ -18,6 +18,12 @@ dmesg
 systemd-analyze [critical-chain|blame]
 ```
 
+Также можно отключить в `/etc/default/grub` опции `quiet splash` и посмотреть вживую что долго грузится.
+
+Лог загрузки можно увидеть в `/var/log/boot.log`
+
+Если видишь `[ TIME ] Timed out waiting for device /dev/disk/by-uuid/CC01-64BD` - возможно Windows изменил UID раздела /boot/efi, рекомендуется уточнить через `blkid`
+
 ### Добавить привилегии гостевым пользователям:
 
 1) Сеть, через GUI Network manager: https://askubuntu.com/questions/894750/allow-a-guest-session-wifi-access-with-no-users-logged-in
