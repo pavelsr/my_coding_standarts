@@ -11,6 +11,13 @@
 
 ## Linux
 
+### Определить что замедляет загрузку компьютера
+
+```
+dmesg
+systemd-analyze [critical-chain|blame]
+```
+
 ### Добавить привилегии гостевым пользователям:
 
 1) Сеть, через GUI Network manager: https://askubuntu.com/questions/894750/allow-a-guest-session-wifi-access-with-no-users-logged-in
