@@ -125,6 +125,20 @@ SELECT DISTINCT TABLE_NAME
         AND TABLE_SCHEMA='220_volt';
 ```
 
+### Показать все таблички в которых колонка определенного типа
+
+Например, искомый тип - `INT(10) UNSIGNED`
+
+```
+SELECT table_schema, table_name, column_name, column_comment
+FROM information_schema.columns
+WHERE column_type = 'INT(10) UNSIGNED' AND column_name = 'id' AND COLUMN_KEY = 'PRI';
+```
+
+Очень полезно при реверс-инжиниринге базы, когда разработчики базы забыли прописать FOREIGN KEY.
+Например в какой-нить табличке есть поле external_id, но для него не прописан foreign key, хотя фактически он есть.
+
+
 ### Показать взаимосвязанные виртуальные таблички (VIEWS)
 
 Если искомый VIEW - catalog_product, то
