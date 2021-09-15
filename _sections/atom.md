@@ -9,7 +9,7 @@ Ctrl+Shift+P - Command Palette
 
 ## Список полезных плагинов
 
-https://atom.io/packages/copy-path удобное копирование путей
+http://atom.io/packages/copy-path удобное копирование путей
 
 https://atom.io/packages/git-blame
 

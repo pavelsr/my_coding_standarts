@@ -11,14 +11,22 @@
   </head>
   <body>
 		{% capture foo %}
-    {% include list_sections.html %}
+        {% include list_sections.html %}
 		{% endcapture %}
-		{% include toc.html html=foo id="toc" %}
+		
+        {% include toc.html html=foo id="toc" %}
 		{% include anchor_headings.html html=foo anchorBody="#" %}
+        
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.2/highlight.min.js"></script>
     <script>
-    hljs.initHighlightingOnLoad();
-    hljs.configure();
+        hljs.initHighlightingOnLoad();
+        hljs.configure();
+    </script>
+    
+    <script src="linkify.min.js"></script>
+    <script src="linkify-html.min.js"></script>
+    <script type="text/javascript">
+        document.body.innerHTML = linkifyHtml(document.body.innerHTML);
     </script>
   </body>
 </html>
