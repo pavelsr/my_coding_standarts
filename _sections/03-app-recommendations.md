@@ -43,6 +43,8 @@
 
 ## Only Windows
 
+* [chkflsh](http://mikelab.kiev.ua/index.php?page=PROGRAMS/chkflsh)
+
 ## Only Linux
 
 * [WoeUSB](https://github.com/WoeUSB/WoeUSB-ng) - запись образов Windows
