@@ -43,7 +43,18 @@ const ui = SwaggerUIBundle({
 
 ### FAQ
 
-#### Как вместо названия таблицы отображать что-то более человекопонятное?
+### Какая самая полезная опция Yancy ?
+
+x-list-columns
+
+может быть как обычным массивом, так и массивом хешей со свойствами title и template
+
+#### Как задать свой шаблон отображения для контроллера yancy#list
+
+https://metacpan.org/dist/Yancy/view/lib/Yancy/Guides/Schema.pod#Configuring-the-List-View
+
+
+#### Как вместо названия таблицы отображать что-то более человекопонятное в админке?
 
 Прописать в конфиге параметр `schema.<table_name>.title`
 
@@ -55,6 +66,25 @@ schema:
   cities_iata:
     title: IATA коды городов
 ```
+
+#### Как исключить из выборки определенные колонки?
+
+Задать x-list-columns в `schema.<table_name>`
+
+Пример:
+
+```perl
+plugin Yancy => {
+    ...
+    schema => {
+        companies => {
+            'x-list-columns' => [ 'name', 'jobs_count', 'hh_id' ]            
+        },
+    },
+};
+```
+
+(при описании схемы в json/yaml то же самое)
 
 #### Как отображать все поля базы в админке?
 
