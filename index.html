@@ -10,13 +10,16 @@
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.2/styles/default.min.css">
   </head>
   <body>
+        <button type="collapseAll" id="collapseAll">Свернуть всё, кроме первого уровня</button>
+        <button type="expandAll" id="expandAll">Развернуть всё</button>
+
 		{% capture foo %}
         {% include list_sections.html %}
 		{% endcapture %}
 		
         {% include toc.html html=foo id="toc" %}
 		{% include anchor_headings.html html=foo anchorBody="#" %}
-        
+
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.2/highlight.min.js"></script>
     <script>
         hljs.initHighlightingOnLoad();
@@ -28,5 +31,6 @@
     <script type="text/javascript">
         document.body.innerHTML = linkifyHtml(document.body.innerHTML);
     </script>
+    <script src="toc-folding.js"></script>
   </body>
 </html>
